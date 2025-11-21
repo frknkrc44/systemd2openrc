@@ -54,6 +54,9 @@ func main() {
 
 	for i, arg := range os.Args {
 		switch arg {
+		case "--version":
+			fmt.Printf("systemd 0 (0.0)\n+OPENRC +NOSYSTEMD default-hierarchy=unified\n")
+			os.Exit(0)
 		case "start", "stop", "restart", "status":
 			commandType = 0
 			cmds = append(cmds, arg)
